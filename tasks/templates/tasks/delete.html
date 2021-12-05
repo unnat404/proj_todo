@@ -1,0 +1,42 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<style>
+    body{
+        background-color: aqua;
+    }
+    input{
+        width:100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+    input::placeholder{
+        color: #d3d3d3;
+    }
+    .submit{
+        background-color: #6BA3E8;
+    }
+    .center-column{
+        width:600px;
+        padding: 20px;
+        margin: 20px auto;
+        box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+        border-radius:  3px;
+        background-color: #fff;
+    }
+</style>
+
+<p class="center-column">Are you sure you want to delete "{{item}}" ? </p> 
+<!-- left - complete this tommorow first thing in the moprnignt 
+then interview bit ka ek chptr pura krna hai -->
+<center>
+<a  href="{% url 'list' %}"> Cancel </a> 
+
+<!-- <a href="{% url 'list' %}"> Confirm </a>  -->
+
+<form  method="POST" action="">
+    {% csrf_token %}
+
+    {{form}}
+    <input type="submit" name="Delete">
+</form>
+</center>
